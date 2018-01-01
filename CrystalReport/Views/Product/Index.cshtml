@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<div>
+    <h3>List Products</h3>
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        @foreach (var p in ViewBag.ListProducts)
+        {
+            <tr>
+                <td>@p.id</td>
+                <td>@p.Name</td>
+                <td>@p.Price</td>
+                <td>@p.Quantity</td>
+            </tr>  
+        }
+    </table>
+    <br /> <br />
+    <a href="@Url.Action("Export","Product")">Export Report</a>
+    <a href="@Url.Action("ExportGrouping","Product")">Export Report Grouping</a>
+</div>
+</body>
+</html>
